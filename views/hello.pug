@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+	form(action="/hello", method="post" class="namecard-form")
+		label.namecard-prompt Please type your name:
+			input(type="text" name="username" class="namecard-name")
+		button(type="submit" class="namecard-submit") Send my name

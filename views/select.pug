@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+	if select
+		h1 You selected #{select}
+	else
+		form(action="/select" method="post")
+			select(name="select")
+				option(value="One") One
+				option(value="Two") Two
+				option(value="Three") Three
+			button(type="submit") Send	

@@ -1,0 +1,18 @@
+extends layout.pug
+block card
+	section.flashcards
+		.card(class=`card-${side}`)
+			.card-header
+			h1.card-title= side
+			#content
+				h2 "#{text}"
+				if hint
+					p#hint
+						i Hint: #{hint}
+			.card-flip-wrap
+				a(href=`/cards/${id}?side=${link}`) 
+					img.card-flip(src="/static/img/flip.svg")
+			.card-next
+				a(href=`/cards`)
+					img(src="/static/img/next.svg")
+		script(src="/app.js")

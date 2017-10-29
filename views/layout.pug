@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+	head
+		title Flash Cards
+		link(href="https://fonts.googleapis.com/css?family=Raleway", rel="stylesheet")
+		link(rel="stylesheet", href="/static/stylesheets/style.css")
+	body
+		include includes/header.pug	
+		section.namecard
+			.namecard-hello
+				if name
+					p.namecard-greeting Welcome, #{name}!
+					form(action="/goodbye", method="POST", class="namecard-exit")
+						button(type="submit")
+							img(src="/static/img/close.svg")
+				else
+					p.namecard-greeting Welcome, Student!
+			block content
+		block card	
